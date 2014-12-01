@@ -1,0 +1,29 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #353535;
+}
+
+.rounded-corners {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.navbar-default {
+    height: 70px;
+}
+
+.content {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.summary {
+    background-color: #F8F8F8;
+    color: #373737;
+    border: 50px orangered;
+    height: 100px;
+    width: 300px;
+}
