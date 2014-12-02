@@ -1,0 +1,59 @@
+/*
+ *= require bootstrap.min
+ */
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    /*background-image: url('/assets/img/bg.jpg');*/
+    background-color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-default {
+    height: 70px;
+}
+
+.navbar-brand {
+    font-size: 23px;
+}
+
+.links li a, .navbar-brand {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.title {
+    position: absolute;
+    display: inline-block;
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+.images {
+    padding: 20px;
+}
+
+@media (max-width: 870px) {
+    header {
+        height: 170px;
+    }
+
+    header img {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: 200px;
+    }
+
+    header img {
+        margin-top: 30px;
+    }
+}
