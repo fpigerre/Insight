@@ -11,14 +11,11 @@ html, body {
     background-size: cover;
 }
 
-.content {
-    text-align: center;
-}
-
 .login {
     padding-top: 20%;
     position: relative;
     padding-bottom: 20%;
+    text-align: center;
 }
 
 .login h1 {

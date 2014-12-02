@@ -1,4 +1,4 @@
-class HomeController < DeviseController
+class HomeController < DeviseController::SessionsController
   layout '_home.html.erb'
 
   # GET /home

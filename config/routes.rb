@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :user, :controllers => {:sessions => 'sessions'}
+  devise_for :users, :controllers => {:sessions => 'sessions'}, :path => '', :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   devise_scope :user do
-    get '/login' => 'devise/sessions#new'
-    get '/logout' => 'devise/sessions#destroy'
+    get '/login', :to => 'devise/sessions#new'
+    get '/logout', :to => 'devise/sessions#destroy'
+    get '/register', :to => 'devise/registrations#new'
   end
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

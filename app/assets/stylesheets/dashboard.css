@@ -1,7 +1,19 @@
+/*
+ *= require bootstrap.min
+ */
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic);
+
 html, body {
     height: 100%;
     width: 100%;
+    margin: 0;
     background-color: #353535;
+    font-family: Lato, "Open Sans", sans-serif;
+    font-weight: 400;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 .rounded-corners {
@@ -15,15 +27,96 @@ html, body {
     height: 70px;
 }
 
+.navbar-brand {
+    font-size: 23px;
+}
+
+.links li a, .navbar-brand {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
 .content {
     padding-left: 50px;
     padding-right: 50px;
 }
 
-.summary {
-    background-color: #F8F8F8;
-    color: #373737;
-    border: 50px orangered;
-    height: 100px;
+.panel {
+    height: 100%;
+    overflow: hidden;
     width: 300px;
+
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.panel a {
+    color: #353535;
+    font-weight: 600;
+}
+
+.panel h1, .panel p {
+    font-size: 40px;
+    float: right;
+    margin-top: 0;
+}
+
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green a {
+    color: #5cb85c;
+}
+
+.panel-green a:hover {
+    color: #3d8b3d;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red a {
+    color: #d9534f;
+}
+
+.panel-red a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow a {
+    color: #f0ad4e;
+}
+
+.panel-yellow a:hover {
+    color: #df8a13;
+}
+
+.table p {
+    font-size: 15px;
 }
