@@ -25,43 +25,60 @@
 </nav>
 
 <div class="content">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <i class="fa fa-inbox fa-3x"></i>
+  <div class="row">
+    <div class="panel panel-primary col-md-4">
+      <div class="panel-heading">
+        <i class="fa fa-inbox fa-3x"></i>
 
-      <h1>Inbox</h1>
+        <h1>Inbox</h1>
+      </div>
+      <div class="panel-footer">
+        <a>View Details</a>
+      </div>
     </div>
-    <div class="panel-footer">
-      <a>View Details</a>
-    </div>
-  </div>
 
-  <div class="panel panel-green">
-    <div class="panel-heading">
-      <i class="fa fa-usd fa-3x"></i>
+    <div class="panel panel-green col-md-4">
+      <div class="panel-heading">
+        <i class="fa fa-usd fa-3x"></i>
 
-      <h1>Currencies</h1>
+        <h1>Currencies</h1>
+      </div>
+      <div class="panel-footer">
+        <div class="table-responsive">
+          <table class="table table">
+            <tr>
+              <td><p><i class="fa fa-btc"></i> USD</p></td>
+              <td><p><%= @price[1]['ask'] %>></p></td>
+            </tr>
+            <tr>
+              <td><p><i class="fa fa-usd"></i> USD</p></td>
+              <td><p><%= $usd %>></p></td>
+            </tr>
+            <tr>
+              <td><p><i class="fa fa-eur"></i> EUR</p></td>
+              <td><p><%= $eur %>></p></td>
+            </tr>
+            <tr>
+              <td><p><i class="fa fa-cny"></i> CNY</p></td>
+              <td><p><%= $cny %>></p></td>
+            </tr>
+            <tr>
+              <td><p><i class="fa fa-gbp"></i> GBP</p></td>
+              <td><p><%= $gbp %>></p></td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
-    <div class="panel-footer">
-      <div class="table-responsive">
-        <table class="table table">
-          <tr>
-            <td><p><i class="fa fa-btc"></i> USD</p></td>
-            <td><p><%= @price[1]['ask'] %>></p></td>
-          </tr>
-          <tr>
-            <td><p><i class="fa fa-usd"></i> USD</p></td>
-            <td><p><%= $usd %>></p></td>
-          </tr>
-          <tr>
-            <td><p><i class="fa fa-eur"></i> EUR</p></td>
-            <td><p><%= $eur %>></p></td>
-          </tr>
-          <tr>
-            <td><p><i class="fa fa-cny"></i> CNY</p></td>
-            <td><p><%= $cny %>></p></td>
-          </tr>
-        </table>
+
+    <div class="panel panel-red col-md-4">
+      <div class="panel-heading">
+        <i class="fa fa-newspaper-o fa-3x"></i>
+
+        <h1>News</h1>
+      </div>
+      <div class="panel-footer">
+        <%= $news.html_safe %>
       </div>
     </div>
   </div>
@@ -69,6 +86,12 @@
 
 <script type="text/javascript">
     $(function () {
-        $('.content').sortable({ items: "> .panel", handle: ".panel-heading", snap: true, containment: ".content", cursor: "move" });
+        $('.content > ').sortable({
+            items: "> .panel",
+            handle: "> .panel-heading",
+            snap: true,
+            containment: ".content",
+            cursor: "move"
+        });
     });
 </script>

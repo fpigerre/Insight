@@ -120,3 +120,13 @@ a:hover {
 .table p {
     font-size: 15px;
 }
+
+.row {
+    padding: 0;
+    margin: 0;
+}
+
+.col-md-4 {
+    padding: 0;
+    margin-right: 100px;
+}
