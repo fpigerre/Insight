@@ -1,27 +1,17 @@
 module ModuleHelper
-
-  def self.get_ex(url, symbol)
-    begin
-      open(url) do |d|
-        json = JSON.parse(d.read)
-        json.each do |a|
-          a.each do |k, v|
-            if k == 'symbol' and v == symbol
-              return true, a
-            end
-          end
-        end
-        return false, 'bity Error: Symbol not found in BitCoin API.'
-      end
-    rescue SocketError => e
-      return false, 'bity Error: Could not connect to BitCoin Charts API.'
-    end
-  end
+  require 'nokogiri'
 
   def self.get_bitcoin
-    body = JSON.parse(open('https://www.bitstamp.net/api/ticker/', {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}).read)
-    print body
-    return body['high']
+    uri = URI.parse('https://www.bitstamp.net/api/ticker/')
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Get.new(uri.request_uri)
+
+    response = http.request(request)
+    response.body
+    return JSON.parse(response.body)['last']
   end
 
   def self.get_currency(code)
@@ -40,5 +30,12 @@ module ModuleHelper
     text_four = text_three.gsub('\n**', ':<br>')
     text_five = text_four.gsub('\n;', '<h3>')
     return text_five.gsub('\n*', '</h3>')
+  end
+
+  def self.get_likes
+    page = Nokogiri::HTML(open('https://www.facebook.com/jj4pm', {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}))
+    links = page.css('span._52id')
+    print links
+    return links.text
   end
 end

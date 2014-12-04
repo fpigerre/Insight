@@ -4,12 +4,12 @@
   <div class="row">
     <div class="panel panel-primary col-md-3">
       <div class="panel-heading">
-        <i class="fa fa-inbox fa-3x"></i>
+        <i class="fa fa-facebook fa-3x"></i>
 
-        <h1>Inbox</h1>
+        <h1>Likes</h1>
       </div>
       <div class="panel-footer">
-        <a>View Details</a>
+        <%= $likes %>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
           <table class="table table">
             <tr>
               <td><p><i class="fa fa-btc"></i> USD</p></td>
-              <td><p><%= @price[1]['ask'] %></p></td>
+              <td><p><%= @price %></p></td>
             </tr>
             <tr>
               <td><p><i class="fa fa-usd"></i> USD</p></td>

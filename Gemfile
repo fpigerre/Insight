@@ -44,3 +44,5 @@ gem 'devise'
 # Currency Conversion
 gem 'money'
 gem 'google_currency'
+
+gem 'nokogiri'
