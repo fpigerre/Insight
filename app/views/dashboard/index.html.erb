@@ -1,32 +1,8 @@
-<nav class="navbar navbar-default navbar-static-top navbar-collapse" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Insight</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="navbar-main">
-      <ul class="nav navbar-nav links">
-        <li class="active"><a href="#">Home</a></li>
-        <li><%= link_to 'CCTV', cctv_path %>></li>
-      </ul>
-      <div class="navbar-right">
-
-      </div>
-    </div>
-  </div>
-</nav>
+<%= render '/layouts/nav' %>
 
 <div class="content">
   <div class="row">
-    <div class="panel panel-primary col-md-4">
+    <div class="panel panel-primary col-md-3">
       <div class="panel-heading">
         <i class="fa fa-inbox fa-3x"></i>
 
@@ -37,7 +13,7 @@
       </div>
     </div>
 
-    <div class="panel panel-green col-md-4">
+    <div class="panel panel-green col-md-3">
       <div class="panel-heading">
         <i class="fa fa-usd fa-3x"></i>
 
@@ -48,30 +24,30 @@
           <table class="table table">
             <tr>
               <td><p><i class="fa fa-btc"></i> USD</p></td>
-              <td><p><%= @price[1]['ask'] %>></p></td>
+              <td><p><%= @price[1]['ask'] %></p></td>
             </tr>
             <tr>
               <td><p><i class="fa fa-usd"></i> USD</p></td>
-              <td><p><%= $usd %>></p></td>
+              <td><p><%= $usd %></p></td>
             </tr>
             <tr>
               <td><p><i class="fa fa-eur"></i> EUR</p></td>
-              <td><p><%= $eur %>></p></td>
+              <td><p><%= $eur %></p></td>
             </tr>
             <tr>
               <td><p><i class="fa fa-cny"></i> CNY</p></td>
-              <td><p><%= $cny %>></p></td>
+              <td><p><%= $cny %></p></td>
             </tr>
             <tr>
               <td><p><i class="fa fa-gbp"></i> GBP</p></td>
-              <td><p><%= $gbp %>></p></td>
+              <td><p><%= $gbp %></p></td>
             </tr>
           </table>
         </div>
       </div>
     </div>
 
-    <div class="panel panel-red col-md-4">
+    <div class="panel panel-red col-md-3">
       <div class="panel-heading">
         <i class="fa fa-newspaper-o fa-3x"></i>
 

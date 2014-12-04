@@ -36,6 +36,10 @@ a:hover {
     padding-bottom: 25px;
 }
 
+.nav-icon {
+    font-size: 25px;
+}
+
 .content {
     padding-left: 50px;
     padding-right: 50px;
@@ -126,7 +130,7 @@ a:hover {
     margin: 0;
 }
 
-.col-md-4 {
+.col-md-3 {
     padding: 0;
-    margin-right: 100px;
+    margin-right: 50px;
 }

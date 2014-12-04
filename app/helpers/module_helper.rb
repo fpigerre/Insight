@@ -1,6 +1,4 @@
 module ModuleHelper
-  require 'net/http'
-  require 'json'
 
   def self.get_ex(url, symbol)
     begin
@@ -20,6 +18,12 @@ module ModuleHelper
     end
   end
 
+  def self.get_bitcoin
+    body = JSON.parse(open('https://www.bitstamp.net/api/ticker/', {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}).read)
+    print body
+    return body['high']
+  end
+
   def self.get_currency(code)
     Money::Bank::GoogleCurrency.ttl_in_seconds = 300
     Money.default_bank = Money::Bank::GoogleCurrency.new
@@ -29,9 +33,12 @@ module ModuleHelper
 
   def self.get_news(year, month, day)
     uri = URI.encode('http://en.wikipedia.org/w/api.php?format=json&action=query&titles=Portal:Current_events/' + year + '_' + month + '_' + day + '&prop=revisions&rvprop=content')
-    body = Net::HTTP.get(URI.parse(uri)).to_s
+    body = Net::HTTP.get(URI.parse(uri))
     text = body.match(/<!-- All news items below this line -->(.*)<!-- All news items above this line -->/m)[1].strip
-    final = text.gsub('[[', '')
-    return final.gsub(']]', '')
+    text_two = text.gsub('[[', '')
+    text_three = text_two.gsub(']]', '')
+    text_four = text_three.gsub('\n**', ':<br>')
+    text_five = text_four.gsub('\n;', '<h3>')
+    return text_five.gsub('\n*', '</h3>')
   end
 end
