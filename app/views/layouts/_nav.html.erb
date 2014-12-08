@@ -26,6 +26,12 @@
             <li>
         <% end %>
         <%= link_to 'CCTV', cctv_path %></li>
+        <% if request.env['PATH_INFO'] == '/boot' %>
+            <li class="active">
+        <% else %>
+            <li>
+        <% end %>
+        <%= link_to 'Boot', boot_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right links">
         <li class="nav-icon"><%= link_to('', edit_user_registration_path, class: 'fa fa-cog') %></li>
