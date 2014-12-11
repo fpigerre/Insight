@@ -1,28 +1,26 @@
-== README
+== Insight
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Insight is built to be used as a fairly modular, insightful dashboard, that can be reached at the tip of one's fingers.
 
-Things you may want to cover:
+Insight displays commonly required and passive information, such as News and Investment feeds, as well as CCTV information and web utilities.
+Insight is built on Rails 4, and is designed to be run in a production environment.
 
-* Ruby version
+In order to run Insight from a production environment, it is important to run database migrations in the production environment:
 
-* System dependencies
+```bash
+$ rake db:migrate RAILS_ENV="production"
+```
 
-* Configuration
+Insight System Information
 
-* Database creation
+* Ruby version - ```1.9.3p551```
 
-* Database initialization
+* Rails version - ```4.1.6```
 
-* How to run the test suite
+* System dependencies - See ```Gemfile```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Database creation and initialization - ```rake db:migrate```
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+In order to generate this README using rake's documentation function, please use:
+<tt>rake doc:app</tt>
