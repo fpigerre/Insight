@@ -30,4 +30,10 @@ class DashboardController < ApplicationController
       format.html
     end
   end
+
+  def keyfeed
+    respond_to do |format|
+      format.html
+    end
+  end
 end

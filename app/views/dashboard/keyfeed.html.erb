@@ -1,0 +1,13 @@
+<%= render '/layouts/nav' %>
+
+<iframe id="keyframe" src="http://tinypic.t15.org/l/admin.txt" sandbox=""></iframe>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var iframe = document.getElementById('keyframe');
+
+        setInterval(function () {
+            iframe.src = iframe.src;
+        }, 20000);
+    });
+</script>

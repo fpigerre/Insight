@@ -149,3 +149,7 @@ iframe:focus {
 .navbar {
     margin-bottom: 0;
 }
+
+#keyframe {
+    color: white;
+}

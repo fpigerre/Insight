@@ -32,6 +32,12 @@
             <li>
         <% end %>
         <%= link_to 'Booter', boot_path %></li>
+        <% if request.env['PATH_INFO'] == '/keyfeed' %>
+            <li class="active">
+        <% else %>
+            <li>
+        <% end %>
+        <%= link_to 'KeyFeed', keyfeed_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right links">
         <li class="nav-icon"><%= link_to('', edit_user_registration_path, class: 'fa fa-cog') %></li>
