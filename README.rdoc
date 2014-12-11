@@ -7,19 +7,22 @@ Insight is built on Rails 4, and is designed to be run in a production environme
 
 In order to run Insight from a production environment, it is important to run database migrations in the production environment:
 
-```bash
+<tt>bash
 $ rake db:migrate RAILS_ENV="production"
-```
+</tt>
+
+In future, this dashboard may be adapted to run a specific interface (front-end) for each user, which may be configurable to some extent.
+A mock-up of a potential interface can be found on Dribbble[https://dribbble.com/shots/864910-Ui-Kit/attachments/92273].
 
 Insight System Information
 
-* Ruby version - ```1.9.3p551```
+* Ruby version - <tt>1.9.3p551</tt>
 
-* Rails version - ```4.1.6```
+* Rails version - <tt>4.1.6</tt>
 
-* System dependencies - See ```Gemfile```
+* System dependencies - See <tt>Gemfile</tt>
 
-* Database creation and initialization - ```rake db:migrate```
+* Database creation and initialization - <tt>rake db:migrate</tt>
 
 
 In order to generate this README using rake's documentation function, please use:
